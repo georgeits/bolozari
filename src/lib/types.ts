@@ -49,13 +49,6 @@ export type FutureProfile = {
   photo: string;
 };
 
-export type PlayQuote = {
-  id: string;
-  text: string;
-  authorId: string;
-  authorName: string;
-};
-
 export type ShirtMessage = {
   id: string;
   author: string;
@@ -64,6 +57,13 @@ export type ShirtMessage = {
   y: number;
   rotation: number;
   size: number;
+  createdAt: string;
+};
+
+export type ClassLetter = {
+  id: string;
+  name: string;
+  message: string;
   createdAt: string;
 };
 
@@ -89,6 +89,20 @@ export type GuestbookEntry = {
   createdAt: string;
   rotation?: number;
   size?: "sm" | "md" | "lg";
+};
+
+
+export type CollageStatus = "pending" | "approved" | "rejected";
+
+export type CollageEntry = {
+  id: string;
+  author: string;
+  caption?: string;
+  imageData: string;
+  status: CollageStatus;
+  rotation: number;
+  createdAt: string;
+  source: "upload" | "photobooth" | "seed";
 };
 
 export type SiteConfig = {
